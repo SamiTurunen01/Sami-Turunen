@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sami Turunen</title>
+  <link rel="stylesheet" href="tyyli.css">
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Siirry sisältöön</a>
+
+<header class="header">
+  <a href="index.html" class="logo">Sami Turunen</a>
+
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-icon">☰</label>
+
+  <nav class="header-right" aria-label="Päävalikko">
+    <a href="index.html">Etusivu</a>
+    <a class="active" href="portfolio.html" aria-current="page">Portfolio</a>
+    <a href="yhteystiedot.html">Yhteystiedot</a>
+  </nav>
+</header>
+
+<main id="main">
+
+  <!-- Sivun otsikko -->
+  <section class="hero" aria-label="Portfolion otsikko">
+    <h1>Portfolio</h1>
+  </section>
+
+  <!-- Johdanto -->
+  <section class="content" aria-label="Portfolion esittely">
+    <p>Tälle sivulle on koottu verkkosivuprojekteja, joita olen suunnitellut ja toteuttanut. Klikkaa projekteja niin pääset katsomaan tarkemmin.</p>
+  </section>
+
+  <!-- Projektit -->
+  <section class="portfolio" aria-label="Projektit">
+    <div class="portfolio__grid">
+
+      <article>
+        <a class="project" href="https://hadesdesign.fi" target="_blank" rel="noopener"
+           aria-label="Avaa Hades Design.fi uuteen välilehteen">
+          <img class="project__img" src="hades-design-kuva.webp" alt="Kuvakaappaus Hades Design -verkkosivusta">
+          <div class="project__overlay">
+            <h2 class="project__title">Hades Design.fi</h2>
+            <p class="project__text">Yrityssivusto: selkeä rakenne, mobiiliystävällisyys ja yhteydenotto.</p>
+            <span class="project__pill">Verkkosivut</span>
+          </div>
+        </a>
+      </article>
+
+      <article>
+        <a class="project" href="https://shady.fi" target="_blank" rel="noopener"
+           aria-label="Avaa shady.fi uuteen välilehteen">
+          <img class="project__img" src="shady-kuva.webp" alt="Kuvakaappaus shady.fi -verkkosivusta">
+          <div class="project__overlay">
+            <h2 class="project__title">shady.fi</h2>
+            <p class="project__text">Asiakasprojekti: nopea käyttökokemus, selkeät CTA:t ja moderni ulkoasu.</p>
+            <span class="project__pill">Asiakasprojekti</span>
+          </div>
+        </a>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section aria-label="Yhteydenotto">
+    <div class="content">
+      <p>Haluatko sinäkin verkkosivut? Ota yhteyttä, niin katsotaan sopiva ratkaisu.</p>
+    </div>
+
+    <div class="ota_yhteyttä_button">
+      <a href="yhteystiedot.html" class="btn">Ota yhteyttä</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__container">
+    <div class="footer__left">
+      <a href="mailto:sami.turunen01@email.com" class="footer__link">sami.turunen01@email.com</a>
+      <a href="tel:+358451088807" class="footer__link">+358 45 108 8807</a>
+    </div>
+
+    <div class="footer__right">
+      © 2026 Sami Turunen
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
+
+

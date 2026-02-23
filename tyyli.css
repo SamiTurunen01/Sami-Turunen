@@ -1,0 +1,444 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+body{
+  background:#f5f5f5;
+}
+
+h1{
+  font-family: "Manrope", sans-serif;
+  text-align: center;
+}
+
+.content{
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+    color: #444444;
+    line-height: 26px;
+    text-align: center;
+}
+
+h2{
+    color: #000000;
+}
+
+/* HEADER: flex -> logo ja hamburger samalle riville */
+.header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: "Inter", sans-serif;
+  box-shadow:0 1px 0 #eaeaea;
+
+  background-color: #f5f5f5;
+  padding: 20px 10px;
+
+  position: relative;   /* dropdownin ankkurointi */
+  overflow: visible;    /* tärkeä: ettei dropdown leikkaudu */
+}
+
+/* Linkit */
+.header a{
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+
+  /* poistetaan floatit */
+  float: none;
+}
+
+/* Logo */
+.header a.logo{
+  font-size: 25px;
+  font-weight: bold;
+}
+
+/* Hover */
+.header a:hover{
+  background-color: #ddd;
+  color: black;
+}
+
+/* Aktiivinen linkki */
+.header a.active{
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+/* Oikea linkkiryhmä (desktop) */
+.header-right{
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  float: none; /* varmistus */
+}
+
+/* Piilota checkbox */
+#menu-toggle{
+  display: none;
+}
+
+/* Hamburger */
+.menu-icon{
+  display: none;        /* desktopilla piilossa */
+  font-size: 28px;
+  cursor: pointer;
+  padding: 10px 12px;
+  color: black;
+  border-radius: 8px;
+  line-height: 1;
+  user-select: none;
+
+  /* poistetaan float */
+  float: none;
+}
+
+/* MOBIILI */
+@media screen and (max-width: 500px){
+
+  /* näytä hamburger */
+  .menu-icon{
+    display: block;
+  }
+
+  /* piilota linkit aluksi */
+  .header-right{
+    display: none;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    background: #ffffff;
+    border-top: 1px solid #e6e6e6;
+    padding: 10px;
+
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  /* auki/kiinni hamburgerista */
+  #menu-toggle:checked ~ .header-right{
+    display: flex;
+  }
+
+  /* linkit koko leveydelle */
+  .header-right a{
+    width: 100%;
+    text-align: left;
+    display: block;
+  }
+}
+
+.footer{
+  border-top:1px solid #e6e6e6;
+  padding:20px 0;
+  background:#f5f5f5;
+  
+}
+
+.footer__container{
+  width:min(1200px,92%);
+  margin:0 auto;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  font-family: "Inter", sans-serif;
+}
+
+.footer__left{
+  display:flex;
+  gap:16px;
+  flex-wrap:wrap;
+}
+
+.footer__link{
+  text-decoration:none;
+  color:#444444;
+  border-bottom:1px solid transparent;
+}
+
+.footer__link:hover{
+  border-bottom-color:#111;
+}
+
+.footer__right{
+  color:#666;
+}
+
+/* mobiili */
+@media (max-width:600px){
+
+  .footer__container{
+    display:grid;
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "email email"
+      "phone copy";
+    gap:8px 12px;
+    align-items:center;
+  }
+
+  /* tee linkeistä gridin "suorat" itemit ilman HTML-muutoksia */
+  .footer__left{
+    display: contents;
+  }
+
+  /* email (1. linkki) */
+  .footer__left .footer__link:first-child{
+    grid-area: email;
+  }
+
+  /* puhelin (2. linkki) */
+  .footer__left .footer__link:last-child{
+    grid-area: phone;
+  }
+
+  /* © oikealle samalle riville puhelimen kanssa */
+  .footer__right{
+    grid-area: copy;
+    justify-self:end;
+    white-space:nowrap;
+  }
+}
+
+.btn{
+  padding: 12px 18px;
+  background: black;
+  color: #ffffff;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  text-decoration:none;
+}
+
+.btn:hover{
+  opacity: 0.8;
+}
+
+.btn2{
+  padding: 12px 18px;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  border: 1px solid #000000;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: "Inter", sans-serif;
+  text-decoration:none;
+}
+
+.btn:hover{
+  opacity: 0.8;
+}
+
+.hero_image{
+  display:block;
+  margin:0 auto;
+  width: 420px;
+  margin-top: 20px;
+}
+
+h2{
+  font-family: "Manrope", sans-serif;
+}
+
+.hero__actions{
+  display:flex;
+  justify-content:center;   /* keskelle */
+  gap:12px;
+}
+
+.ota_yhteyttä_button{
+  display:flex;
+  justify-content:center;   /* keskelle */
+}
+
+/* Grid */
+.portfolio__grid{
+  display:grid;
+  gap:16px;
+  grid-template-columns: 1fr;
+}
+
+.portfolio__grid article{
+  display:contents;
+}
+
+@media (min-width:700px){
+  .portfolio__grid{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Kortti (linkki koko kortti) */
+.project{
+  position:relative;
+  display:block;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid #e6e6e6;
+  min-height:320px;
+  text-decoration:none;
+  color:#000000;
+  background:#fff;
+}
+
+/* Taustakuva */
+.project__img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transform: scale(1);
+}
+
+/* Tumma “fade” jotta teksti näkyy */
+.project::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.65) 0%,
+    rgba(0,0,0,0.35) 45%,
+    rgba(0,0,0,0.15) 70%,
+    rgba(0,0,0,0.00) 100%
+  );
+}
+
+/* Tekstit kuvan päälle */
+.project__overlay{
+  position:relative;         /* tulee gradientin päälle */
+  z-index:1;
+  height:90%;
+  padding:18px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;  /* tekstit alas kuten monissa portfolioissa */
+  gap:10px;
+
+  color:#fff;
+}
+
+.project__title{
+  margin:0;
+  font-size:36px;
+  line-height:1.05;
+  letter-spacing:-0.02em;
+  color: #fff;
+}
+
+.project__text{
+  margin:0;
+  max-width:60ch;
+  opacity:0.95;
+}
+
+/* “Pill” tagi */
+.project__pill{
+  align-self:flex-start;
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.6);
+  background: rgba(0,0,0,0.25);
+  color:#fff;
+  line-height:1;
+  
+}
+.project__pill{
+  transition: all .25s ease;
+}
+
+.project__pill:hover{
+  background:rgba(255,255,255,0.9);
+  color:#111;
+  transform: translateY(-2px);
+}
+
+/* Hover (ei pakollinen, mutta kiva) */
+.project:hover .project__img{
+  transform: scale(1.02);
+}
+
+html, body{
+  height:100%;
+}
+
+body{
+  display:flex;
+  flex-direction:column;
+}
+
+/* main sisältö venyy */
+main{
+  flex:1;
+  padding-bottom:60px;
+  padding-top: 60px;
+}
+
+.contact-page{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;   /* pystysuunnassa */
+  align-items:center;       /* vaakasuunnassa */
+  text-align:center;
+
+  flex:1;            /* tärkein: täyttää tilan ilman ylipitkää vh-laskua */
+  min-height:0;      /* varmistus */
+}
+
+.logo{
+  font-family:"Manrope", sans-serif;
+  font-weight:600;
+  font-size:22px;
+}
+
+/* mobiili oletus → allekkain */
+.content--about{
+  display:grid;
+  gap:32px;
+
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* tablet + desktop → vierekkäin */
+@media (min-width:768px){
+  .content--about{
+    grid-template-columns:1fr 1fr;
+    align-items:start;
+  }
+}
+
+.about-block{
+  max-width:60ch;
+}
+
+.skip-link{
+  position:absolute;
+  left:-9999px;
+}
+
+.skip-link:focus{
+  left:20px;
+  top:20px;
+  background:black;
+  color:white;
+  padding:10px;
+}
+

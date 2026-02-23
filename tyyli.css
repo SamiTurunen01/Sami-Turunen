@@ -247,6 +247,12 @@ h2{
   margin:0 auto;
   width: 420px;
   margin-top: 20px;
+  height:auto;
+}
+
+img{
+  max-width:100%;
+  height:auto;
 }
 
 h2{
